@@ -1,5 +1,3 @@
-{-# OPTIONS_GHC -Wno-unrecognised-pragmas #-}
-{-# HLINT ignore "Use head" #-}
 data Tree23 a = Empty
               | Leaf  a
               | Node2 a (Tree23 a) (Tree23 a)

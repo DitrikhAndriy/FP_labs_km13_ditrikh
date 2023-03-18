@@ -24,12 +24,10 @@ indent h = "    " ++ indent (h - 1)
 
 
 instance Functor Tree23 where
-    fmap :: (a -> b) -> Tree23 a -> Tree23 b
     fmap _ Empty             = Empty
     fmap f (Leaf a)          = Leaf  (f a)
     fmap f (Node2 x l r)     = Node2 (f x) (fmap f l) (fmap f r)
     fmap f (Node3 x y l m r) = Node3 (f x) (f y) (fmap f l) (fmap f m) (fmap f r)
-
 
 main :: IO ()
 main = do
@@ -43,7 +41,7 @@ main = do
 
     let f = (^2)
 
-    putStrLn "Tree example:"
+    putStrLn  "Tree example:"
     showTree23 tree
 
     putStrLn "Tree after use function (^2):"
